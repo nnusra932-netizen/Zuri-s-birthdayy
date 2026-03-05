@@ -1,0 +1,204 @@
+# Zuri-s-birthdayy
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Bestie 🎉</title>
+
+<style>
+
+body{
+margin:0;
+padding:0;
+font-family: 'Segoe UI', sans-serif;
+text-align:center;
+background:linear-gradient(120deg,#ff9a9e,#fad0c4);
+overflow:hidden;
+color:white;
+}
+
+.container{
+margin-top:80px;
+}
+
+h1{
+font-size:55px;
+animation: glow 2s infinite alternate;
+}
+
+@keyframes glow{
+from{ text-shadow:0 0 10px white;}
+to{ text-shadow:0 0 25px yellow;}
+}
+
+button{
+padding:15px 35px;
+font-size:18px;
+border:none;
+border-radius:30px;
+background:white;
+color:#ff4b6e;
+cursor:pointer;
+margin-top:20px;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.1);
+}
+
+.message{
+display:none;
+margin-top:30px;
+font-size:20px;
+max-width:600px;
+margin-left:auto;
+margin-right:auto;
+line-height:1.6;
+}
+
+.cake{
+font-size:90px;
+margin-top:20px;
+animation: bounce 2s infinite;
+}
+
+@keyframes bounce{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-15px);}
+}
+
+/* Balloons */
+
+.balloon{
+position:absolute;
+bottom:-150px;
+font-size:40px;
+animation: float 8s linear infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(0);}
+100%{transform:translateY(-110vh);}
+}
+
+/* Confetti */
+
+.confetti{
+position:absolute;
+width:10px;
+height:10px;
+background:white;
+animation:fall 5s linear infinite;
+}
+
+@keyframes fall{
+0%{transform:translateY(-10vh);}
+100%{transform:translateY(110vh);}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<audio id="music" loop>
+<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_1e2d9d6a38.mp3?filename=happy-birthday-to-you-piano-version-13976.mp3">
+</audio>
+
+<div class="container">
+
+<h1>Happy Birthday Bestie 🎉</h1>
+
+<div class="cake">🎂</div>
+
+<button onclick="startSurprise()">Open Your Surprise 🎁</button>
+
+<p class="message" id="msg">
+
+Happy Birthday to the person who makes my life brighter just by existing.  
+
+I honestly don't know how to explain how grateful I am to have you as my best friend.  
+You have been there in moments when I needed someone the most,  
+and somehow you always know how to make things feel lighter.
+
+Your presence in my life is something I truly cherish.  
+You deserve happiness, success, peace, and every beautiful thing this world has to offer.
+
+No matter how far we are or how busy life gets,  
+I hope you always remember that you have someone who genuinely cares about you and wishes the best for you.
+
+Thank you for being you.  
+Stay kind, stay strong, stay amazing.
+
+And please never forget…
+
+You are really special to me. 💙
+
+Happy Birthday once again 🎂
+
+</p>
+
+</div>
+
+<script>
+
+function startSurprise(){
+
+document.getElementById("msg").style.display="block";
+
+document.getElementById("music").play();
+
+createConfetti();
+
+createBalloons();
+
+}
+
+function createBalloons(){
+
+for(let i=0;i<15;i++){
+
+let balloon=document.createElement("div");
+
+balloon.className="balloon";
+
+balloon.innerHTML="🎈";
+
+balloon.style.left=Math.random()*100+"vw";
+
+balloon.style.animationDuration=(5+Math.random()*5)+"s";
+
+document.body.appendChild(balloon);
+
+}
+
+}
+
+function createConfetti(){
+
+for(let i=0;i<60;i++){
+
+let conf=document.createElement("div");
+
+conf.className="confetti";
+
+conf.style.left=Math.random()*100+"vw";
+
+conf.style.backgroundColor="hsl("+Math.random()*360+"deg,100%,50%)";
+
+conf.style.animationDuration=(3+Math.random()*4)+"s";
+
+document.body.appendChild(conf);
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
+```
